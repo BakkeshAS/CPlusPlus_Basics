@@ -1,0 +1,85 @@
+// visual studio 2012 c++ console application
+// Stack Implementation
+
+#include "stdafx.h"
+#include <iostream>
+
+using namespace std;
+
+#define MAX 10
+
+class Stack
+{
+	private:
+
+		int arr[MAX];
+		int top;
+
+	public:
+		Stack()
+		{
+			top = -1;
+		}
+
+		void push(int item)
+		{
+			if (top == (MAX - 1))
+			{
+				cout << "Stack is full";
+				return;
+			}
+
+			top++;
+			arr[top] = item;
+
+		}
+
+		int pop()
+		{
+			if (top == -1)
+			{
+				cout << "Stack is empty";
+				return NULL;
+			}
+
+			int data = arr[top];
+			top--;
+			return data;
+
+		}
+
+};
+
+
+
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int value = NULL;
+	Stack s;
+
+
+	s.push(20);
+	s.push(18);
+	s.push(217);
+	s.push(120);
+	s.push(280);
+
+	value = s.pop();
+	cout << "popped data is ";
+	cout <<  value << endl;
+
+	s.push(1993);
+
+	value = s.pop();
+	cout << "popped data is ";
+	cout <<  value << endl;
+
+	int temp;
+	cin >>  temp;
+
+
+	return 0;
+}
+
