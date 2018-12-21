@@ -1,0 +1,107 @@
+//concole application
+
+#include "stdafx.h"
+#include <iostream>
+#include<string>
+
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	string str;
+	getline(cin, str);
+	int vovelCount = 0;
+	string vovels;
+	bool a = false;
+	bool e = false;
+	bool i = false;
+	bool o = false;
+	bool u = false;
+
+	for (std::string::iterator it = str.begin(); it != str.end(); ++it)
+	{
+		switch (*it)
+		{
+			case 'a':
+				if (false == a)
+				{
+					vovels.push_back('a');
+					a = true;
+				}
+
+				vovelCount++;
+				break;
+
+			case 'e':
+				if (false == e)
+				{
+					vovels.push_back('e');
+					e == true;
+				}
+
+				vovelCount++;
+				break;
+
+			case 'i':
+				if (false == i)
+				{
+					vovels.push_back('i');
+					i = true;
+				}
+
+				vovelCount++;
+				break;
+
+			case 'o':
+				if (false == o)
+				{
+					vovels.push_back('o');
+					o = true;
+				}
+
+				vovelCount++;
+				break;
+
+			case 'u':
+				if (false == u)
+				{
+					vovels.push_back('u');
+					u = true;
+				}
+
+				vovelCount++;
+				break;
+		}
+	}
+
+	cout << "We found ";
+	cout << vovelCount;
+
+	if (vovelCount == 1)
+	{
+		cout << " vovel and it is";
+	}
+	else
+	{
+		cout << " vovels. Some may be repeated and they are as follows" << endl;
+	}
+
+	for (int i = 0; i < vovels.length(); i++)
+	{
+		cout << vovels[i];
+
+		if (i < vovels.length() - 1)
+		{
+			cout << ", ";
+		}
+		else
+		{
+			cout << ".";
+		}
+	}
+
+	int stayOpen;
+	cin >> stayOpen;
+	return 0;
+}
+
